@@ -1,0 +1,62 @@
+{
+    // Task richiamabili con Ctrl+Shift+P -> "Tasks: Run Task".
+    // "build" e' anche il task di default di Ctrl+Shift+B e viene lanciato prima di ogni F5.
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PlayGround.slnx",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "publish",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "publish",
+                "${workspaceFolder}/PlayGround/PlayGround.csproj",
+                "-c",
+                "Release",
+                "/property:GenerateFullPaths=true",
+                "/consoleloggerparameters:NoSummary;ForceNoAlign"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "docker: build immagine",
+            "type": "shell",
+            "command": "docker compose build",
+            "problemMatcher": []
+        },
+        {
+            "label": "docker: avvia (compose up)",
+            "type": "shell",
+            "command": "docker compose up --build -d && echo 'App su http://localhost:8080'",
+            "problemMatcher": []
+        },
+        {
+            "label": "docker: log",
+            "type": "shell",
+            "command": "docker compose logs -f",
+            "isBackground": true,
+            "problemMatcher": []
+        },
+        {
+            "label": "docker: ferma (compose down)",
+            "type": "shell",
+            "command": "docker compose down",
+            "problemMatcher": []
+        }
+    ]
+}

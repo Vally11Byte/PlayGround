@@ -1,0 +1,12 @@
+# File che NON vengono mandati a Docker durante la build (build piu' veloce e pulita)
+**/bin/
+**/obj/
+**/.vs/
+.vscode/
+.git/
+.github/
+docs/
+*.md
+Dockerfile
+compose.yaml
+.dockerignore

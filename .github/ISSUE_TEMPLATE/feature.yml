@@ -1,0 +1,21 @@
+name: ✨ Nuova funzionalita'
+description: Proponi un'idea o un miglioramento
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Che problema risolve
+    validations:
+      required: true
+  - type: textarea
+    id: soluzione
+    attributes:
+      label: Soluzione proposta
+  - type: textarea
+    id: criteri
+    attributes:
+      label: Quando la consideriamo "fatta"
+      placeholder: |
+        - [ ] ...
+        - [ ] ...

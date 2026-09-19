@@ -1,0 +1,12 @@
+{
+    "dotnet.defaultSolution": "PlayGround.slnx",
+    "editor.formatOnSave": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "git.autofetch": true,
+    "git.pruneOnFetch": true,
+    "files.exclude": {
+        "**/bin": true,
+        "**/obj": true
+    }
+}

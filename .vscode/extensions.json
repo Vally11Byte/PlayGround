@@ -1,0 +1,12 @@
+{
+    // VS Code proporra' di installare queste estensioni a chiunque apra il progetto.
+    "recommendations": [
+        "ms-dotnettools.csdevkit",
+        "ms-dotnettools.csharp",
+        "ms-azuretools.vscode-containers",
+        "github.vscode-pull-request-github",
+        "github.vscode-github-actions",
+        "eamodio.gitlens",
+        "editorconfig.editorconfig"
+    ]
+}

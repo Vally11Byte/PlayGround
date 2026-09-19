@@ -1,0 +1,18 @@
+# Avvio locale con Docker Compose:
+#   docker compose up --build        (in primo piano, Ctrl+C per fermare)
+#   docker compose up --build -d     (in background)
+#   docker compose down              (ferma e rimuove i container)
+services:
+  playground:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VERSION: 0.0.0-local
+    image: playground:local
+    container_name: playground
+    ports:
+      - "8080:8080"   # porta-sul-tuo-pc : porta-nel-container
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+    restart: unless-stopped

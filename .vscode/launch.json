@@ -1,0 +1,42 @@
+{
+    // Configurazioni di debug. Premi F5 per avviare la prima della lista,
+    // oppure scegli quella che vuoi dal pannello "Run and Debug" (Ctrl+Shift+D).
+    "version": "0.2.0",
+    "configurations": [
+        {
+            // Avvia l'app in locale con il debugger attaccato: puoi mettere breakpoint nei .razor e .cs
+            "name": "PlayGround (http)",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/PlayGround/bin/Debug/net10.0/PlayGround.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/PlayGround",
+            "stopAtEntry": false,
+            // Quando nel terminale compare "Now listening on: http://...", apre il browser su quell'indirizzo
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "\\bNow listening on:\\s+(http://\\S+)"
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5269"
+            }
+        },
+        {
+            // Come sopra ma con "dotnet watch": salvi un file e l'app si ricarica da sola (hot reload).
+            // Niente breakpoint qui: e' pensata per modificare la UI velocemente.
+            "name": "PlayGround (watch / hot reload)",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "dotnet watch --project PlayGround/PlayGround.csproj --launch-profile http",
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            // Si attacca a un processo .NET gia' in esecuzione (es. avviato a mano da terminale)
+            "name": "Attach a processo .NET",
+            "type": "coreclr",
+            "request": "attach"
+        }
+    ]
+}
