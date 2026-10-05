@@ -18,6 +18,8 @@ if (!app.Environment.IsDevelopment())
 
 //PR TEST
 
+//SECONDO TEST PR
+
 app.UseStatusCodePagesWithReExecute("/not-found", createScopeForStatusCodePages: true);
 app.UseHttpsRedirection();
 
